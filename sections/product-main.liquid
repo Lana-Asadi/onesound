@@ -32,3 +32,26 @@
   </div>
 
 </section>
+
+<section class="os-product">
+  <div class="os-product__media">
+    <video autoplay muted loop playsinline class="os-product__video">
+      <source src="{{ product.media.first | media_url }}" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="os-product__info">
+    <h1>{{ product.title }}</h1>
+    <p class="os-product__price">{{ product.price | money }}</p>
+
+    <form method="post" action="/cart/add">
+      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+      <button type="submit" class="os-btn">Add to Cart</button>
+    </form>
+
+    <div class="os-product__desc">
+      {{ product.description }}
+    </div>
+  </div>
+</section>
+
