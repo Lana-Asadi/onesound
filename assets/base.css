@@ -88,3 +88,24 @@ body {
   font-size: 2.5rem;
   letter-spacing: -1px;
 }
+
+.soundwave {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 120px;
+  background: repeating-linear-gradient(
+    to right,
+    rgba(255,255,255,0.15),
+    rgba(255,255,255,0.15) 2px,
+    transparent 2px,
+    transparent 6px
+  );
+  animation: waveMove 2s linear infinite;
+  z-index: 1;
+}
+
+@keyframes waveMove {
+  from { background-position-x: 0; }
+  to { background-position-x: 20px; }
+}
