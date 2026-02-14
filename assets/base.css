@@ -26,9 +26,10 @@ body {
   left: 0;
   z-index: 0;
   opacity: 0.9;
-  transition: transform 0.1s linear;
+  transition: transform 0.2s ease-out;
   transform-origin: center;
 }
+
 
 .hero-overlay {
   position: absolute;
