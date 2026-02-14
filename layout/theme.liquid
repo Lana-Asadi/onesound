@@ -1,15 +1,20 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ request.locale.iso_code }}">
 <head>
   <meta charset="utf-8">
-  <title>{{ shop.name }}</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>{{ shop.name }} — {{ page_title }}</title>
+
   {{ content_for_header }}
+
   {{ 'base.css' | asset_url | stylesheet_tag }}
-  {{ 'animations.css' | asset_url | stylesheet_tag }}
+  {{ 'theme.js' | asset_url | script_tag }}
 </head>
 
 <body>
+
   {{ content_for_layout }}
+
 </body>
 </html>
-
