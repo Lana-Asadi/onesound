@@ -1,0 +1,25 @@
+<section class="collection-page">
+  <h1>{{ collection.title }}</h1>
+
+  <div class="product-grid">
+    {% for product in collection.products %}
+      <div class="product-card">
+        <a href="{{ product.url }}">
+          <img src="{{ product.featured_image | image_url: width: 600 }}">
+          <h3>{{ product.title }}</h3>
+          <p>{{ product.price | money }}</p>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collection",
+  "settings": [],
+  "presets": [
+    { "name": "Collection" }
+  ]
+}
+{% endschema %}
