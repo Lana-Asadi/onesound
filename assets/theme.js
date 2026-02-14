@@ -1,16 +1,19 @@
 document.addEventListener("DOMContentLoaded", function() {
   const video = document.getElementById("heroVideo");
 
-  window.addEventListener("scroll", function() {
+  function handleScroll() {
     const scrollY = window.scrollY;
-    const rotation = scrollY * 0.05;
-    const scale = 1 + scrollY * 0.0005;
+    const rotation = scrollY * 0.015; // MUCH more subtle
+    const scale = 1 + scrollY * 0.0002;
 
     if (video) {
       video.style.transform = `
+        perspective(1200px)
         rotateY(${rotation}deg)
         scale(${scale})
       `;
     }
-  });
+  }
+
+  window.addEventListener("scroll", handleScroll);
 });
