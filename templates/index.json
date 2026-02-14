@@ -1,9 +1,7 @@
 {
   "sections": {
-    "hero": {
-      "type": "hero"
-    }
+    "hero": { "type": "hero" },
+    "light": { "type": "light-transition" }
   },
-  "order": ["hero"]
+  "order": ["hero", "light"]
 }
-
